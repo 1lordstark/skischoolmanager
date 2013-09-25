@@ -1,0 +1,58 @@
+﻿
+<div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Montage Mtn Ski School</h1>
+        <p>Returning for the 2013/2014 Winter Season Montage Mountain will be offering a variety of ski school classes for youngsters and adults. Classes will also be available for aspiring ski instructors! Full program details including enrollment windows, rates, and class schedules will be posted here as they become available. Please check back later this summer for these details and more!</p>
+        @*<p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>*@
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+      </div>
+
+
+     <div id="loginDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
+		@using (Html.BeginForm("JsonLogin", "Account", new { ReturnUrl = "/Employee" }, FormMethod.Post, new { id ="loginForm" }))
+        {
+         <div class="modal-header">
+				<a href="#" class="close" data-dismiss="modal">&times;</a>
+				<h3>Employee Login</h3>
+		    </div>
+             <div class="modal-body">
+            <div class="row">
+                <div class="span2">
+                    <input class="xlarge" id="xlInput" name="UserName" type="text" placeholder="Email" data-bind="value: userName"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span2">
+                    <input class="xlarge" id="xlInput" name="Password" type="password" placeholder="Password" data-bind="value: password"/>
+                </div>
+            </div>
+
+		</div>
+		<div class="modal-footer">
+            <input type="button" class="btn" onclick="accountNS.accountViewModel.hideLogin()" value="Cancel" />
+            <input type="submit" class="btn btn-primary" value="OK" />
+		</div>
+        }
+		
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="utf-8" />
+        <title>Menus, Buttons, Dropdowns</title>
+         
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap-responsive.css" rel="stylesheet" />
+        <link href="~/Content/Site.css" rel="stylesheet" />
+
+        <script src="~/Scripts/lib/jquery-1.9.1.min.js"></script>
+        <script src="~/Scripts/lib/bootstrap.js"></script>
+    </head>
+    <body>
+       <nav class="navbar navbar-inverse">
+           <div class="navbar-inner">
+               <a class="brand" href="/">The Sample Site</a>
+               <ul class="nav">
+                   <li><a href="/Articles/List">Articles</a></li>
+                   <li><a href="/blogs/all">Blog</a></li>
+                   <li><a href="/about/">About</a></li>
+               </ul>
+           </div>
+
+       </nav>
+
+       <div class="hero-unit">
+           <h1>Use HTML!</h1>
+           <p>It's better than Xml!</p>
+           <p>
+               <a class="btn btn-primary btn-large">learn more</a>
+           </p>
+       </div>
+
+        @RenderBody()
+
+    </body>
+</html>
