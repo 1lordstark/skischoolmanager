@@ -18,3 +18,5 @@
 obj/
 [Rr]elease*/
 _ReSharper*/
+*.mdf
+*.ldf
