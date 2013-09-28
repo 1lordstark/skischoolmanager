@@ -10,6 +10,8 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using SkiSchool.Web.Filters;
 using SkiSchool.Web.Models;
+using SkiSchool.Web.RestHelpers;
+using System.Net;
 
 namespace SkiSchool.Web.Controllers
 {
@@ -17,6 +19,7 @@ namespace SkiSchool.Web.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+        
         //
         // POST: /Account/JsonLogin
 
@@ -24,7 +27,13 @@ namespace SkiSchool.Web.Controllers
         [HttpPost]
         public ActionResult JsonLogin(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid)
+            HttpStatusCode httpStatusCode;
+
+            var securityApiUrl = new Uri(string.Format(@"http://securityapi.resortdataservices.com/api/security?username={0}&password={1}", model.UserName, model.Password));
+
+            var user = Invoke.Get<User>(securityApiUrl, out httpStatusCode);
+            
+            if (ModelState.IsValid && user.Id > 0)
             {
                 FormsAuthentication.SetAuthCookie(model.UserName, true);
             }
