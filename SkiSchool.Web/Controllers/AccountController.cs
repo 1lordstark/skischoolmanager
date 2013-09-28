@@ -39,8 +39,6 @@ namespace SkiSchool.Web.Controllers
             }
 
             return RedirectToAction("Index", "Employee");
-
-            // return Json(new { success = true, redirect = returnUrl });
         }
         
         //

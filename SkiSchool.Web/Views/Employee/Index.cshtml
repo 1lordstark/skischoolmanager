@@ -4,41 +4,39 @@
 <div class="container">
 
     <div class="row">
-        <div class="span4">
-            <h2>Employee Information</h2>
-            <span data-bind="text: employeeNS.employeeViewModel.titleId"></span>
-            <span data-bind="text: employeeNS.employeeViewModel.employeeTypeId"></span>
-            <span data-bind="text: employeeNS.employeeViewModel.rosterId"></span>
-            <span data-bind="text: employeeNS.employeeViewModel.isLocal"></span>
-            <span data-bind="text: employeeNS.employeeViewModel.current"></span>
+        <div class="span6">
+            <h2 class="well">Employee Information</h2>
+            <ul>
+                <li>
+                    <span data-bind="text: employeeNS.employeeViewModel.titleId"></span>
+                </li>
+                <li>
+                    <span data-bind="text: employeeNS.employeeViewModel.employeeTypeId"></span>
+                </li>
+                <li>
+                    <span data-bind="text: employeeNS.employeeViewModel.rosterId"></span>
+                </li>
+                <li>
+                    <span data-bind="text: employeeNS.employeeViewModel.isLocal"></span>
+                </li>
+                <li>
+                    <span data-bind="text: employeeNS.employeeViewModel.current"></span>
+                </li>
+            </ul>
         </div>
-    </div>  
-    <div class="row">
-        <div class="span4">
-            <h2>Personal Information</h2>
-            <span data-bind="text: employeeNS.employeeViewModel.person.FirstName"></span>
-            <span data-bind="text: employeeNS.employeeViewModel.person.LastName"></span>
-            <span data-bind="text: employeeNS.employeeViewModel.person.DateOfBirth"></span>
+        <div class="span6">
+            <h2 class="well">Personal Information</h2>
+            <ul>
+                <li>
+                    <span data-bind="text: employeeNS.employeeViewModel.person.FirstName"></span>
+                </li>
+                <li>
+                    <span data-bind="text: employeeNS.employeeViewModel.person.LastName"></span>
+                </li>
+                <li>
+                    <span data-bind="text: employeeNS.employeeViewModel.person.DateOfBirth"></span>
+                </li>
+            </ul>
         </div>
     </div>
-    
-    
-    <!-- Example row of columns -->
-@*      <div class="row">
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-      </div>*@
 </div>
