@@ -19,7 +19,11 @@ namespace SkiSchool.Web.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
-        public readonly string _clientToken = @"578DB399-7047-4E82-921D-DA51E8F14A4E";
+        private readonly string _clientToken = @"578DB399-7047-4E82-921D-DA51E8F14A4E";
+
+        private string _securityApiUrl = @"http://securityapi.resortdataservices.com/api/security?username={0}&password={1}";
+
+        private string _employeeApiUrl = @"http://employeeapi.resortdataservices.com/api/employees/0?loginId={0}&clienttoken={1}";
 
         //
         // POST: /Account/JsonLogin
@@ -30,13 +34,11 @@ namespace SkiSchool.Web.Controllers
         {
             HttpStatusCode httpStatusCode;
 
-            var securityApiUrl = new Uri(string.Format(@"http://securityapi.resortdataservices.com/api/security?username={0}&password={1}", model.UserName, model.Password));
+            var securityApiUri = new Uri(string.Format(_securityApiUrl, model.UserName, model.Password));
 
-            var user = Invoke.Get<User>(securityApiUrl, out httpStatusCode);
+            var user = Invoke.Get<User>(securityApiUri, out httpStatusCode);
 
-            var employeeApiUrl = string.Format(@"http://employeeapi.resortdataservices.com/api/employees/0?loginId={0}&clienttoken={1}", user.Id, _clientToken);
-
-            var employeeUri = new Uri(employeeApiUrl);
+            var employeeUri = new Uri(string.Format(_employeeApiUrl, user.Id, _clientToken));
 
             var employee = Invoke.Get<Employee>(employeeUri, out httpStatusCode);
 

@@ -12,7 +12,11 @@ namespace SkiSchool.Web.Controllers.Api
     public class EmployeesController : ApiController
     {
 
-        public readonly string _clientToken = @"578DB399-7047-4E82-921D-DA51E8F14A4E";
+        private readonly string _clientToken = @"578DB399-7047-4E82-921D-DA51E8F14A4E";
+
+        private string _employeeWithLoginIdUrl = @"http://employeeapi.resortdataservices.com/api/employees/0?loginId={0}&clienttoken={1}";
+
+        private string _employeeWithIdUrl = @"http://employeeapi.resortdataservices.com/api/employees/{0}?loginId=&clienttoken={1}";
 
         // GET api/employees/5
         public Employee Get(int? loginId, int? id)
@@ -21,9 +25,7 @@ namespace SkiSchool.Web.Controllers.Api
 
             if (id == null)
             {
-                var employeeWithLoginIdUrl = string.Format(@"http://employeeapi.resortdataservices.com/api/employees/0?loginId={0}&clienttoken={1}", loginId, _clientToken);
-
-                var employeeWithLoginIdUri = new Uri(employeeWithLoginIdUrl);
+                var employeeWithLoginIdUri = new Uri(string.Format(_employeeWithLoginIdUrl, loginId, _clientToken));
 
                 var employee = Invoke.Get<Employee>(employeeWithLoginIdUri, out httpStatusCode);
 
@@ -32,9 +34,7 @@ namespace SkiSchool.Web.Controllers.Api
 
             if (loginId == null)
             {
-                var employeeWithIdUrl = string.Format(@"http://employeeapi.resortdataservices.com/api/employees/{0}?loginId=&clienttoken={1}", id, _clientToken);
-
-                var employeeWithIdUri = new Uri(employeeWithIdUrl);
+                var employeeWithIdUri = new Uri(string.Format(_employeeWithIdUrl, id, _clientToken));
 
                 var employee = Invoke.Get<Employee>(employeeWithIdUri, out httpStatusCode);
 
