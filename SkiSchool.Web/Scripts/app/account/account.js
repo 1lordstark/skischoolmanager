@@ -27,30 +27,3 @@ $(document).ready(function () {
 });
 
 
-
-//accountNS = (function () {
-//    var hideLogin = function () {
-//            $('#loginDialog').modal('toggle');
-//        },
-//        logout = function () {
-//            $('#logout').click(function (event) {
-
-//                event.preventDefault();
-
-//                $.ajax({
-//                    url: '/Account/LogOff',
-//                    type: 'POST',
-//                    success: function () {
-//                        window.location.href = '/Home/Index'
-//                    }
-//                });
-//            });
-//        };
-
-//    return {
-//        hideLogin: hideLogin,
-//        logout: logout
-//    }   
-//}());
-
-

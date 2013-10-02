@@ -19,7 +19,8 @@ namespace SkiSchool.Web.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
-        
+        public readonly string _clientToken = @"578DB399-7047-4E82-921D-DA51E8F14A4E";
+
         //
         // POST: /Account/JsonLogin
 
@@ -32,13 +33,21 @@ namespace SkiSchool.Web.Controllers
             var securityApiUrl = new Uri(string.Format(@"http://securityapi.resortdataservices.com/api/security?username={0}&password={1}", model.UserName, model.Password));
 
             var user = Invoke.Get<User>(securityApiUrl, out httpStatusCode);
-            
+
+            var employeeApiUrl = string.Format(@"http://employeeapi.resortdataservices.com/api/employees/0?loginId={0}&clienttoken={1}", user.Id, _clientToken);
+
+            var employeeUri = new Uri(employeeApiUrl);
+
+            var employee = Invoke.Get<Employee>(employeeUri, out httpStatusCode);
+
+            var employeeId = employee.Id;
+
             if (ModelState.IsValid && user.Id > 0)
             {
                 FormsAuthentication.SetAuthCookie(model.UserName, true);
             }
 
-            return RedirectToAction("Index", "Employee");
+            return RedirectToAction("Details", "Employee", new { id = employeeId });
         }
         
         //

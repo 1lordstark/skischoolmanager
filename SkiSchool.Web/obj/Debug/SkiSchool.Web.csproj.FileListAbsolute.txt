@@ -80,6 +80,6 @@ C:\Git\SkiSchool\Web\SkiSchool\SkiSchool.Web\bin\ko\System.Spatial.resources.dll
 C:\Git\SkiSchool\Web\SkiSchool\SkiSchool.Web\bin\ru\System.Spatial.resources.dll
 C:\Git\SkiSchool\Web\SkiSchool\SkiSchool.Web\bin\zh-Hans\System.Spatial.resources.dll
 C:\Git\SkiSchool\Web\SkiSchool\SkiSchool.Web\bin\zh-Hant\System.Spatial.resources.dll
+C:\Git\SkiSchool\Web\SkiSchool\SkiSchool.Web\obj\Debug\SkiSchool.Web.csprojResolveAssemblyReference.cache
 C:\Git\SkiSchool\Web\SkiSchool\SkiSchool.Web\obj\Debug\SkiSchool.Web.dll
 C:\Git\SkiSchool\Web\SkiSchool\SkiSchool.Web\obj\Debug\SkiSchool.Web.pdb
-C:\Git\SkiSchool\Web\SkiSchool\SkiSchool.Web\obj\Debug\SkiSchool.Web.csprojResolveAssemblyReference.cache

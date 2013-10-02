@@ -16,5 +16,14 @@ namespace SkiSchool.Web.Controllers
             return View();
         }
 
+        //
+        // GET: /Employee/Details?id=1
+
+        public ActionResult Details(int id)
+        {
+
+            return View();
+        }
+
     }
 }
